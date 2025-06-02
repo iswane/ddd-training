@@ -16,17 +16,7 @@ public class Room {
 
 	public void computePrice(double roomPriceRdc) {
 		price = new Price(roomPriceRdc);
-		if (level.getNumber() == 0) {
-			price = price.compute(Level.RATE_LEVEL_ZERO);
-		} else if (level.getNumber() == 1) {
-			price = price.compute(Level.RATE_LEVEL_ONE);
-		} else if (level.getNumber() == 2) {
-			price = price.compute(Level.RATE_LEVEL_TWO);
-		} else if (level.getNumber() == 3) {
-			price = price.compute(Level.RATE_LEVEL_THREE);
-		} else {
-			throw new IllegalArgumentException("Level number not supported");
-		}
+		price = price.compute(level.getRate());
 	}
 
 	public Price getRoomPrice() {

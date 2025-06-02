@@ -12,7 +12,18 @@ public class Level {
 		this.number = number;
 	}
 
-	public int getNumber() {
-		return number;
+	public double getRate() {
+		switch (number) {
+			case 0:
+				return RATE_LEVEL_ZERO;
+			case 1:
+				return RATE_LEVEL_ONE;
+			case 2:
+				return RATE_LEVEL_TWO;
+			case 3:
+				return RATE_LEVEL_THREE;
+			default:
+				throw new IllegalArgumentException("Level number not supported");
+		}
 	}
 }
